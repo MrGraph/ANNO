@@ -225,7 +225,7 @@ One such area in which researchers rely on “best practices” is with network 
         <fibo-fnd-utl-av:definitionOrigin rdf:datatype="&xsd;string">Artificial Neural Network Ontology</fibo-fnd-utl-av:definitionOrigin>
         <skos:definition rdf:datatype="&xsd;string">Indicates the maximum artificial neural network depth with which a weight initialization algorithm can be used.</skos:definition>
         <rdfs:domain rdf:resource="&anno;WeightInitializationAlgorithm"/>
-        <rdfs:range rdf:resource="&fibo-fnd-utl-bt;nonNegativeWholeNumber"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
     </owl:DatatypeProperty>
     
 
@@ -237,7 +237,7 @@ One such area in which researchers rely on “best practices” is with network 
         <fibo-fnd-utl-av:definitionOrigin rdf:datatype="&xsd;string">Artificial Neural Network Ontology</fibo-fnd-utl-av:definitionOrigin>
         <skos:definition rdf:datatype="&xsd;string">Indicates the minimum artificial neural network depth with which a weight initialization algorithm can be used.</skos:definition>
         <rdfs:domain rdf:resource="&anno;WeightInitializationAlgorithm"/>
-        <rdfs:range rdf:resource="&fibo-fnd-utl-bt;nonNegativeWholeNumber"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
     </owl:DatatypeProperty>
     
 
@@ -458,14 +458,14 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isSmooth"/>
+                <owl:onProperty rdf:resource="&anno;isLinear"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;boolean"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isLinear"/>
+                <owl:onProperty rdf:resource="&anno;isSmooth"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;boolean"/>
             </owl:Restriction>
@@ -497,26 +497,26 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&anno;WeightInitializationAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
-                <owl:hasValue rdf:datatype="&xsd;integer">2</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
                 <owl:someValuesFrom rdf:resource="&anno;HiddenLayer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
-                <owl:someValuesFrom rdf:resource="&anno;ActivationFunction"/>
+                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">2</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
                 <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
+                <owl:someValuesFrom rdf:resource="&anno;ActivationFunction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&anno;HeInitializationAlgorithm"/>
@@ -552,26 +552,26 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&anno;WeightInitializationAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
-                <owl:hasValue rdf:datatype="&xsd;integer">100</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
                 <owl:someValuesFrom rdf:resource="&anno;HiddenLayer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
-                <owl:someValuesFrom rdf:resource="&anno;ActivationFunction"/>
+                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">100</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
                 <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
+                <owl:someValuesFrom rdf:resource="&anno;ActivationFunction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&anno;LecunUniformInitializationAlgorithm"/>
@@ -653,8 +653,8 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&anno;WeightInitializationAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
-                <owl:hasValue rdf:datatype="&xsd;integer">2</owl:hasValue>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
+                <owl:someValuesFrom rdf:resource="&anno;SquareLayer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -665,20 +665,20 @@ One such area in which researchers rely on “best practices” is with network 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
+                <owl:someValuesFrom rdf:resource="&anno;TwoDimensionalLayer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
                 <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
-                <owl:someValuesFrom rdf:resource="&anno;SquareLayer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
-                <owl:someValuesFrom rdf:resource="&anno;TwoDimensionalLayer"/>
+                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">2</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <skos:definition>a weight initialization algorithm appropriate for square two dimensional layers, which makes the N x N weight matrix the N x N identity matrix</skos:definition>
@@ -766,14 +766,14 @@ One such area in which researchers rely on “best practices” is with network 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
-                <owl:hasValue rdf:datatype="&xsd;integer">5</owl:hasValue>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
+                <owl:someValuesFrom rdf:resource="&anno;HiddenLayer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
-                <owl:someValuesFrom rdf:resource="&anno;HiddenLayer"/>
+                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">5</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -877,20 +877,14 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&anno;WeightInitializationAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
-                <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
+                <owl:someValuesFrom rdf:resource="&anno;TwoDimensionalLayer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
                 <owl:someValuesFrom rdf:resource="&anno;SquareLayer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
-                <owl:someValuesFrom rdf:resource="&anno;TwoDimensionalLayer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -903,6 +897,12 @@ One such area in which researchers rely on “best practices” is with network 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
                 <owl:someValuesFrom rdf:resource="&anno;ActivationFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&anno;UniformInitializationAlgorithm"/>
@@ -1051,12 +1051,6 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&anno;WeightInitializationAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
-                <owl:hasValue rdf:datatype="&xsd;integer">2</owl:hasValue>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
                 <owl:someValuesFrom rdf:resource="&anno;HiddenLayer"/>
             </owl:Restriction>
@@ -1065,6 +1059,12 @@ One such area in which researchers rely on “best practices” is with network 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
                 <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">2</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1145,14 +1145,14 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&anno;InitializationAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
+                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMaximumCompatibleDepth"/>
+                <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
@@ -1174,14 +1174,14 @@ One such area in which researchers rely on “best practices” is with network 
         <rdfs:subClassOf rdf:resource="&anno;WeightInitializationAlgorithm"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
-                <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
+                <owl:someValuesFrom rdf:resource="&anno;HiddenLayer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
-                <owl:someValuesFrom rdf:resource="&anno;LinearActivationFunction"/>
+                <owl:onProperty rdf:resource="&anno;hasMinimumCompatibleDepth"/>
+                <owl:hasValue rdf:datatype="&xsd;integer">0</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1192,8 +1192,8 @@ One such area in which researchers rely on “best practices” is with network 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
-                <owl:someValuesFrom rdf:resource="&anno;HiddenLayer"/>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
+                <owl:someValuesFrom rdf:resource="&anno;LinearActivationFunction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&anno;ZeroInitializationAlgorithm"/>
@@ -1223,15 +1223,15 @@ One such area in which researchers rely on “best practices” is with network 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
-                <owl:onClass rdf:resource="&anno;Layer"/>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
+                <owl:onClass rdf:resource="&anno;ActivationFunction"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&anno;isCompatibleWithActivationFunction"/>
-                <owl:onClass rdf:resource="&anno;ActivationFunction"/>
+                <owl:onProperty rdf:resource="&anno;isCompatibleWithLayerType"/>
+                <owl:onClass rdf:resource="&anno;Layer"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1511,6 +1511,154 @@ One such area in which researchers rely on “best practices” is with network 
         </pav:authoredBy>
     </rdf:Description>
     <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+        <pav:authoredBy>
+            <rdf:Description>
+                <rdf:type rdf:resource="&dct;Agent"/>
+                <rdf:type rdf:resource="&foaf;Person"/>
+            </rdf:Description>
+        </pav:authoredBy>
+    </rdf:Description>
+    <rdf:Description>
+        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
+        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
+    </rdf:Description>
+    <rdf:Description>
         <dct:title rdf:datatype="&xsd;string">Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification</dct:title>
         <dct:title rdf:datatype="&xsd;string">Understanding the Difficulty of Training Deep Feedforward Neural Networks</dct:title>
     </rdf:Description>
@@ -1537,154 +1685,6 @@ One such area in which researchers rely on “best practices” is with network 
     <rdf:Description>
         <dct:title rdf:datatype="&xsd;string">Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification</dct:title>
         <dct:title rdf:datatype="&xsd;string">Understanding the Difficulty of Training Deep Feedforward Neural Networks</dct:title>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
-    </rdf:Description>
-    <rdf:Description>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-        <pav:authoredBy>
-            <rdf:Description>
-                <rdf:type rdf:resource="&dct;Agent"/>
-                <rdf:type rdf:resource="&foaf;Person"/>
-            </rdf:Description>
-        </pav:authoredBy>
-    </rdf:Description>
-    <rdf:Description>
-        <foaf:homePage rdf:resource="http://research.microsoft.com/en-us/um/people/kahe/"/>
-        <foaf:mbox rdf:resource="mailto:kahe@microsoft.com"/>
     </rdf:Description>
     <rdf:Description>
         <dct:title rdf:datatype="&xsd;string">Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification</dct:title>

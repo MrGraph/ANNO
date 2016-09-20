@@ -177,9 +177,8 @@ HIAA:HIAActivationPub_provenance {
           pav:authoredBy _:He .
 
   _:He
-    a prov:Agent, prov:Person, dct:Agent, foaf:Person;
+    a prov:Agent, prov:Person, dct:Agent, foaf:Person ;
            foaf:givenName      "He, Kaiming"^^xsd:string;
-           foaf:mbox           <mailto:kahe@microsoft.com>;
            foaf:homePage       <http://research.microsoft.com/en-us/um/people/kahe/> .
 
   HIAA:HIAActivationPub_provenance a np:Provenance .
@@ -220,7 +219,6 @@ HIAL:HIALayerPub_provenance {
   _:He
     a prov:Agent, prov:Person, dct:Agent, foaf:Person;
            foaf:givenName      "He, Kaiming"^^xsd:string;
-           foaf:mbox           <mailto:kahe@microsoft.com>;
            foaf:homePage       <http://research.microsoft.com/en-us/um/people/kahe/> .
   HIAL:HIALayerPub_provenance a np:Provenance .
 }
@@ -266,7 +264,6 @@ HIAD:HIADepthPub_provenance {
   _:He
     a prov:Agent, prov:Person, dct:Agent, foaf:Person;
            foaf:givenName      "He, Kaiming"^^xsd:string;
-           foaf:mbox           <mailto:kahe@microsoft.com>;
            foaf:homePage       <http://research.microsoft.com/en-us/um/people/kahe/> .
 
   HIAD:HIADepthPub_provenance a np:Provenance .
@@ -779,7 +776,6 @@ XIAA:XIAActivationPub_provenance {
   _:He
     a prov:Agent, prov:Person, dct:Agent, foaf:Person;
            foaf:givenName      "He, Kaiming"^^xsd:string;
-           foaf:mbox           <mailto:kahe@microsoft.com>;
            foaf:homePage       <http://research.microsoft.com/en-us/um/people/kahe/> .
 
   XIAA:XIAActivationPub_provenance a np:Provenance .
